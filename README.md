@@ -17,7 +17,7 @@ Demo - https://www.youtube.com/watch?v=tH7ymnazBeY&t=25s
 
 
 Additonal credits
- - Orbit.gif - Kevin Murphy, Dribble.com
+ - Orbit.gif - Kevin Murphy, www.Dribble.com
  - Hud.gif - Freepik, www.freepik.com
 
 
