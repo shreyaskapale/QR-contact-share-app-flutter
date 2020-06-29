@@ -8,10 +8,10 @@ Demo - https://www.youtube.com/watch?v=tH7ymnazBeY&t=25s
 
 ### Lib Structure:
 
- -- components
- -- screens
- -- styles
- -- services
+ > -- components
+ > -- screens
+ > -- styles
+ > -- services
 
 
 
