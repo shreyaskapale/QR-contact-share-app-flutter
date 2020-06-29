@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'store.dart';
+import '../globals.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'scanResult.dart';

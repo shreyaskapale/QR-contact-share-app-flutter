@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:avatar_glow/avatar_glow.dart';
-import 'package:panme/savefunctions.dart';
-import 'store.dart';
+import 'file:///C:/Users/Shreyas/AndroidStudioProjects/panme/lib/services/savefunctions.dart';
+import '../globals.dart';
 import 'home.dart';
 class Mixing extends StatefulWidget {
   @override

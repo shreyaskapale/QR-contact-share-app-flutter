@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:avatar_glow/avatar_glow.dart';
-import 'savefunctions.dart';
-import 'mixing.dart';
-import 'store.dart';
-import 'home.dart';
+import '../services/savefunctions.dart';
+import 'qrGenSplash.dart';
+import '../globals.dart';
+import '../components/headerStepsWidget.dart';
+import '../components/glowButtonWidget.dart';
 class Third extends StatefulWidget {
 
   @override
@@ -16,9 +17,7 @@ class _ThirdState extends State<Third> {
   @override
   bool _visible = false;
   bool selected = false;
-
   var _bgColor = Colors.black;
-
   final emailController = TextEditingController();
 
   @override
@@ -36,9 +35,9 @@ class _ThirdState extends State<Third> {
           children: <Widget>[
             Text("Lets get your email"),
             Spacer(),
-            steps(0,1),
-            steps(0,2),
-            steps(1,3),
+            Steps(0,1),
+            Steps(0,2),
+            Steps(1,3),
           ],
         ),
       ),
@@ -156,7 +155,7 @@ class _ThirdState extends State<Third> {
                                 ),
                                 width: 380,
                               ),
-                              RoundIconButton(Icon(Icons.navigate_next,color: Colors.white,),() async {
+                              GlowButton(Icon(Icons.navigate_next,color: Colors.white,),() async {
 
                                   if(emailController.text.length>0){
                                     print(emailController.text);
@@ -168,7 +167,7 @@ class _ThirdState extends State<Third> {
                                       MaterialPageRoute(builder: (context) => Mixing()
                                       ));
 
-                              })
+                              },Color(0xff0DCBFC),Colors.transparent)
                             ],
                           ),
                         ),
@@ -184,80 +183,3 @@ class _ThirdState extends State<Third> {
     );
   }
 }
-class steps extends StatelessWidget {
-
-  final active;
-  final num;
-  var cactive;
-  var cicon;
-  steps(this.active, this.num){
-    if(active==1){
-      cactive = Colors.white.withOpacity(0.4);
-    }else{
-      cactive = Colors.transparent;
-    }
-    switch(num){
-      case 1:
-        cicon = Icons.looks_one;
-        break;
-      case 2:
-        cicon = Icons.looks_two;
-        break;
-      case 3:
-        cicon = Icons.looks_3;
-        break;
-
-    }
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.all(3),
-        decoration: BoxDecoration(
-            color: cactive,
-            borderRadius: BorderRadius.circular(10)
-        ),
-        child: Icon(cicon)
-    );
-  }
-}
-class RoundIconButton extends StatelessWidget {
-  final Icon ico;
-  final Function onPressed;
-  RoundIconButton(this.ico,this.onPressed);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.bottomRight,
-      child: AvatarGlow(
-        startDelay: Duration(milliseconds: 1000),
-        glowColor: Color(0xff0DCBFC),
-        endRadius: 70.0,
-        duration: Duration(milliseconds: 2000),
-        repeat: true,
-        showTwoGlows: true,
-        repeatPauseDuration: Duration(milliseconds: 100),
-        child: RawMaterialButton(
-          onPressed:onPressed,
-          elevation:6,
-          disabledElevation: 10,
-          shape:CircleBorder(
-            side: BorderSide(color: Color(0xff016982))
-          ),
-          constraints: BoxConstraints.tightFor(
-            width: 66.0,
-            height: 66.0,
-          ),
-
-
-          child: ico,
-
-        ),
-      ),
-    );
-  }
-}
-
