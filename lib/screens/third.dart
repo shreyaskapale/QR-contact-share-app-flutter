@@ -2,12 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:avatar_glow/avatar_glow.dart';
+import 'package:panme/screens/home.dart';
 import '../services/savefunctions.dart';
 import 'qrGenSplash.dart';
 import '../globals.dart';
 import '../components/headerStepsWidget.dart';
 import '../components/glowButtonWidget.dart';
 class Third extends StatefulWidget {
+  static const route = "third";
 
   @override
   _ThirdState createState() => _ThirdState();
@@ -162,10 +164,7 @@ class _ThirdState extends State<Third> {
                                     await saveShared("pmail",emailController.text);
                                   }
                                   email=emailController;
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => Mixing()
-                                      ));
+                                  Navigator.pushNamed(context,Home.route);
 
                               },Color(0xff0DCBFC),Colors.transparent)
                             ],

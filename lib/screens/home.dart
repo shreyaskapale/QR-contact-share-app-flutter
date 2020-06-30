@@ -8,6 +8,7 @@ import 'package:animated_background/animated_background.dart';
 
 
 class Home extends StatefulWidget {
+  static const route = "home";
   @override
   _HomeState createState() => _HomeState();
 }

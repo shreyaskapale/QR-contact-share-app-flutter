@@ -8,6 +8,7 @@ import '../globals.dart';
 import '../components/headerStepsWidget.dart';
 import '../styles/style.dart';
 class Second extends StatefulWidget {
+  static const route = "second";
   @override
   _SecondState createState() => _SecondState();
 }

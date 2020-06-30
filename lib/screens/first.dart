@@ -9,17 +9,15 @@ import '../components/headerStepsWidget.dart';
 import '../components/glowButtonWidget.dart';
 import '../components/appearAnimationWidget.dart';
 import '../styles/style.dart';
-class FirstPage extends StatefulWidget {
-  FirstPage({Key key, this.title}) : super(key: key);
-
-
+class First extends StatefulWidget {
+  static const route = "first";
+  First({Key key, this.title}) : super(key: key);
   final String title;
-
   @override
   _FirstPage createState() => _FirstPage();
 }
 
-class _FirstPage extends State<FirstPage> {
+class _FirstPage extends State<First> {
   @override
   bool _visible = false;
   final nameController = TextEditingController();
@@ -112,10 +110,7 @@ class _FirstPage extends State<FirstPage> {
                           await saveShared("pname", nameController.text);
                           name = nameController;
                         }
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Second()
-                            ));
+                        Navigator.pushNamed(context,Second.route);
                       },Colors.white,Colors.white)
                     ],
                   ),),

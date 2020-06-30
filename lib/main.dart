@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:panme/screens/first.dart';
 import 'services/savefunctions.dart';
-import 'screens/first.dart';
-
-
+import 'globals.dart';
 Future<void> main() async {
   runApp(MyApp());
 //  var x =await getShared("pname");
@@ -19,9 +18,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Post Pandemic Meet',
-      theme: ThemeData.dark(),
-      home: FirstPage(),
+        title: 'Post Pandemic Meet',
+        theme: ThemeData.dark(),
+        initialRoute:  First.route,
+        routes: routes // Routes are defined in globals.dart
     );
   }
 }

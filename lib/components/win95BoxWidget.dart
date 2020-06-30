@@ -131,10 +131,7 @@ class _Old95containerState extends State<Old95container> {
                   await saveShared("pnum",numberController.text);
                 }
                 phone = numberController;
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Third()
-                    ));
+                Navigator.pushNamed(context,Third.route);
 
               },
               child: Text("Submit",style: TextStyle(
