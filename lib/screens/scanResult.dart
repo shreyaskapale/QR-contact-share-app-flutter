@@ -122,16 +122,16 @@ class _ScanResultState extends State<ScanResult> with TickerProviderStateMixin {
                 ),
                 child: FlatButton(
                   onPressed: () async {
-//                      String displayName = fName;
-//                      Iterable<Item> emails = [fEmail];
-//                      Iterable<Item> phones = [fPhone];
-//                      print("saving !");
-//                      var newContact = Contact(
-//                        displayName: displayName,
-//                        emails: emails,
-//                        phones: phones,
-//                      );
-//                      await ContactsService.addContact(newContact);
+                     String displayName = fName;
+                     Iterable<Item> emails = [fEmail];
+                     Iterable<Item> phones = [fPhone];
+                     print("saving !");
+                     var newContact = Contact(
+                       displayName: displayName,
+                       emails: emails,
+                       phones: phones,
+                     );
+                     await ContactsService.addContact(newContact);
                     setState(() {
                       showAlertDialog(context);
                     });
